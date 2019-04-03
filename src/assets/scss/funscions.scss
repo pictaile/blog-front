@@ -1,0 +1,15 @@
+@function green-color($key: "100") {
+  @return map-get($greens, $key);
+}
+
+@function yellow-color($key: "100") {
+  @return map-get($yellows, $key);
+}
+
+@function red-color($key: "100") {
+  @return map-get($reds, $key);
+}
+
+@function blue-color($key: "100") {
+  @return map-get($blues, $key);
+}

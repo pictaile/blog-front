@@ -1,0 +1,90 @@
+/** paths **/
+$path-to-img: "~src/assets/img/" !default;
+$path-to-fonts: "~src/assets/fonts/" !default;
+
+/** colors **/
+
+/*gray*/
+$gray-333: #333 !default;
+$gray-1400: #3b3b3b !default;
+$gray-1500: #959595 !default;
+$gray-1200: #b0b4c4 !default;
+$gray-450: #eeeeee !default;
+$gray-1000: #d8d8d8 !default;
+$white-smoke-gray: #f3f3f3 !default;
+$gray-1300: #f9f9f9 !default;
+
+
+
+$grays: (
+  "333": $gray-333,
+  "450": $gray-450,
+  "1000": $gray-1000,
+  "1100": $white-smoke-gray,
+  "1200": $gray-1200,
+  "1300": $gray-1300,
+  "1400": $gray-1400,
+  "1500": $gray-1500
+);
+
+
+/*green*/
+$greens: () !default;
+$avocado-green: #79b827 !default;
+$olive-drab-green: #507D14 !default;
+$olive-drab-green-15: #507D15 !default;
+$saltpan-green: #f2f7eb !default;
+$yellow-green: #84BD3A !default;
+$yellow-green: #84BD3A !default;
+$Leaf-green: #3C620A !default;
+
+
+$greens: map-merge(
+    (
+      "100": $avocado-green,
+      "200": $olive-drab-green,
+      "300": $olive-drab-green-15,
+      "400": $saltpan-green,
+      "500": $yellow-green,
+      "600": $Leaf-green
+    ),
+    $greens
+);
+
+/*yellow*/
+$yellows: () !default;
+$selective-yellow: #ffb700 !default;
+
+$yellows: map-merge(
+    (
+      "100": $selective-yellow
+    ),
+    $yellows
+);
+
+/*red*/
+$reds: () !default;
+$crimson-red: #ed1c24 !default;
+$red: #ff0000 !default;
+
+$reds: map-merge(
+    (
+      "100": $crimson-red,
+      "200": $red
+    ),
+    $reds
+);
+
+/*blue*/
+$blues: () !default;
+$blue-100: #44566c;
+$blue-200: #6195ed;
+
+
+$blues: map-merge(
+    (
+      "100": $blue-100,
+      "200": $blue-200
+    ),
+    $blues
+);
