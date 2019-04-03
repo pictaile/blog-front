@@ -4,10 +4,19 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:otpon": "ng serve -c local",
     "build": "ng build",
     "test": "ng test",
+    "test:phantom": "ng test --browsers PhantomJS --watch=false",
+    "test:coverage": "ng test --browsers PhantomJS --code-coverage --watch=false",
+    "test:coverage:show": "http-server -c-1 -o -p 9875 ./coverage",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "check": "ng lint && ng build",
+    "check:test": "ng lint && ng test",
+    "check:e2e": "ng lint && ng test && ng e2e",
+    "build:prod": "npm i && npm install har-validator && ng lint && npm run test:phantom && ng build --prod",
+    "build:local": "ng build --configuration=local && http-server ./dist/insurance-frontend"
   },
   "private": true,
   "dependencies": {
