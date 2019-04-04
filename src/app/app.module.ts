@@ -14,13 +14,15 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ToastrModule} from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FacebookModule} from 'ngx-facebook';
+import { ArticleComponent } from './article/article.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminComponent,
     MainComponent,
-    LoginComponent
+    LoginComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,

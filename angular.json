@@ -41,8 +41,7 @@
             },
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
-              "./node_modules/froala-editor/js/froala_editor.pkgd.min.js",
-              "https://connect.facebook.net/en_US/sdk.js"
+              "./node_modules/froala-editor/js/froala_editor.pkgd.min.js"
             ]
           },
           "configurations": {
@@ -111,8 +110,7 @@
             },
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
-              "./node_modules/froala-editor/js/froala_editor.pkgd.min.js",
-              "https://connect.facebook.net/en_US/sdk.js"
+              "./node_modules/froala-editor/js/froala_editor.pkgd.min.js"
             ],
             "assets": [
               "src/favicon.ico",
