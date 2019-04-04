@@ -3,7 +3,8 @@
 "~node_modules/bootstrap/scss/mixins",
 "~node_modules/bootstrap/scss/print",
 "~node_modules/bootstrap/scss/reboot",
-"~node_modules/bootstrap/scss/type";
+"~node_modules/bootstrap/scss/type",
+"~node_modules/bootstrap/scss/navbar";
 @import "./mixins";
 @import "./variables";
 @import "./funscions";
@@ -12,3 +13,6 @@
 $body-bg: $white;
 $link-color: green-color("100");
 $text-color: gray('333');
+
+/* app-component */
+$bg-header-color: gray("450");

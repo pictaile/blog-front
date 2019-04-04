@@ -29,10 +29,54 @@ a {
     outline: none;
   }
 }
+.blog-wrapper {
 
+}
 
 .container {
   width: 90%;
   margin: auto;
 }
 
+
+.flex-container {
+  @include flexbox;
+  @include flex-wrap(wrap);
+  @include align-items(flex-start);
+  @include align-content(align-content);
+}
+
+.vertical-center {
+  @include align-items(center);
+}
+
+.f-1 {
+  width: 10%;
+}
+.f-2 {
+  width: 20%;
+}
+.f-3 {
+  width: 30%;
+}
+.f-4 {
+  width: 40%;
+}
+.f-5 {
+  width: 50%;
+}
+.f-6 {
+  width: 60%;
+}
+.f-7 {
+  width: 70%;
+}
+.f-8 {
+  width: 80%;
+}
+.f-9 {
+  width: 90%;
+}
+.f-10 {
+  width: 100%;
+}
