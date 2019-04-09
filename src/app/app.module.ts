@@ -15,6 +15,7 @@ import {ToastrModule} from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FacebookModule} from 'ngx-facebook';
 import { ArticleComponent } from './article/article.component';
+import { OAuthModule } from 'angular-oauth2-oidc';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ArticleComponent } from './article/article.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    OAuthModule.forRoot(),
     FroalaEditorModule.forRoot(),
     FroalaViewModule.forRoot(),
     ToastrModule.forRoot({

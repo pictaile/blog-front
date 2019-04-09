@@ -1,8 +1,10 @@
-<div class="article-wrapper">
+<div class="article-wrapper" *ngIf="data">
 
-  <p class="h2">Title</p>
+  <fb-like href="{{data.path}}"></fb-like>
 
-  <div class="content-wrapper">
-    asdfasdf
-  </div>
+  <p class="h2">{{data.title}}</p>
+
+  <div class="content-wrapper" [innerHTML]="data.content"></div>
+
+
 </div>
