@@ -19,4 +19,14 @@ export class ArticlesService extends BaseSenderService {
 
     return this.httpSender(request$);
   }
+
+  public save(data) {
+    const options = {
+      ...data
+    };
+
+    const request$ = this.http.post(`${MAIN_URL}/${URL_ENUM.ARTICLES}/${data.id}`, options);
+
+    return this.httpSender(request$);
+  }
 }

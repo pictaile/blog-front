@@ -1,8 +1,14 @@
-<p>
-  admin works!
-</p>
+<div class="article-list" *ngIf="data">
 
+  <div class="flex-container article-item vertical-center" *ngFor="let item of data" >
+    <div class="for-img">
+      <img [src]="item.path" class="img-item">
+    </div>
+    <div class="f-12">
+      <p class="h4">{{item.title}}</p>
+     <a [routerLink]="['edit/' + item.id]">Редактировать</a>
+    </div>
+  </div>
 
-<div [froalaEditor]>
-  <b>Hello, Froala!</b>
 </div>
+

@@ -4,6 +4,7 @@ import {MainComponent} from './main/main.component';
 import {AdminComponent} from './admin/admin.component';
 import {LoginComponent} from './login/login.component';
 import {ArticleComponent} from './article/article.component';
+import {EditComponent} from './admin/edit/edit.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent
+  },
+  {
+    path: 'admin/edit/:id',
+    component: EditComponent
   },
 ];
 

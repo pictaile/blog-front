@@ -1,0 +1,18 @@
+
+<div class="article-wrapper" *ngIf="data">
+
+  <div class="input-group ">
+    <input class="form-control" [(ngModel)]="data.title">
+  </div>
+
+  <div class="input-group">
+    <div [froalaEditor] [(froalaModel)]="data.content"></div>
+  </div>
+  <div class="input-group">
+    <button class="btn-success" (click)="save()">Сохранить</button>
+  </div>
+
+
+</div>
+
+

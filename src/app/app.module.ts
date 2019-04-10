@@ -16,6 +16,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FacebookModule} from 'ngx-facebook';
 import { ArticleComponent } from './article/article.component';
 import { OAuthModule } from 'angular-oauth2-oidc';
+import { EditComponent } from './admin/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { OAuthModule } from 'angular-oauth2-oidc';
     AdminComponent,
     MainComponent,
     LoginComponent,
-    ArticleComponent
+    ArticleComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
