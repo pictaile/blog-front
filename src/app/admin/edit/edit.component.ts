@@ -35,13 +35,8 @@ export class EditComponent implements OnInit {
   }
 
   public save() {
-    debugger;
     const res = this.generate();
-    this.articlesService.save(res).subscribe(
-      res => {
-        debugger;
-      }
-    )
+    this.articlesService.save(res).subscribe((_) => {});
   }
 
   private generate() {

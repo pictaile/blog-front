@@ -15,8 +15,28 @@ import {ToastrModule} from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FacebookModule} from 'ngx-facebook';
 import { ArticleComponent } from './article/article.component';
-import { OAuthModule } from 'angular-oauth2-oidc';
+import {AuthConfig, JwksValidationHandler, OAuthModule, OAuthModuleConfig, OAuthStorage, ValidationHandler} from 'angular-oauth2-oidc';
 import { EditComponent } from './admin/edit/edit.component';
+import {environment} from '../environments/environment';
+
+const config: AuthConfig = {
+  issuer: 'https://jeroenheijmans.eu.auth0.com/',
+  clientId: 'GICewG40jdYWEnmuKNFux3MW4auQypSF',
+  customQueryParams: { audience: 'https://auth0-demo-001.infi.nl' },
+  redirectUri: window.location.origin + '/index.html',
+  silentRefreshRedirectUri: window.location.origin + '/silent-refresh.html',
+  scope: 'openid profile email',
+};
+
+config.logoutUrl = `${config.issuer}v2/logout?client_id=${config.clientId}&returnTo=${encodeURIComponent(config.redirectUri)}`;
+
+const authModuleConfig: OAuthModuleConfig = {
+  // Inject "Authorization: Bearer ..." header for these APIs:
+  resourceServer: {
+    allowedUrls: ['http://localhost:8080'],
+    sendAccessToken: true,
+  },
+};
 
 @NgModule({
   declarations: [
@@ -36,7 +56,7 @@ import { EditComponent } from './admin/edit/edit.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    OAuthModule.forRoot(),
+    OAuthModule.forRoot(authModuleConfig),
     FroalaEditorModule.forRoot(),
     FroalaViewModule.forRoot(),
     ToastrModule.forRoot({
@@ -49,7 +69,12 @@ import { EditComponent } from './admin/edit/edit.component';
     }),
         FacebookModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    { provide: OAuthModuleConfig, useValue: authModuleConfig },
+    { provide: ValidationHandler, useClass: JwksValidationHandler },
+    { provide: OAuthStorage, useValue: localStorage },
+    { provide: AuthConfig, useValue: config },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

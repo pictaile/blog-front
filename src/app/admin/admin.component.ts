@@ -13,30 +13,21 @@ import {ArticlesService} from '../general/xhr/articles/articles.service';
 export class AdminComponent implements OnInit {
   public data;
 
-  private authConfig: AuthConfig = {
-    issuer: 'https://accounts.google.com',
-    redirectUri: window.location.origin + '/index.html',
-    clientId: environment.Google.clientId,
-    scope: 'kostya.ochotnik@gmail.com',
-    strictDiscoveryDocumentValidation: false
-  };
-
   constructor(
-    private oauthService: OAuthService,
     protected articlesService: ArticlesService,
   ) {
-    this.oauthService.configure(this.authConfig);
-    this.oauthService.tokenValidationHandler = new JwksValidationHandler();
-    this.oauthService.loadDiscoveryDocumentAndTryLogin();
   }
 
   public ngOnInit() {
-    // this.oauthService.initImplicitFlow();
+    this.getArticles();
+  }
+
+  public getArticles() {
     this.articlesService.getArticles().subscribe(
       res => {
         this.data = res;
       }
     );
-
   }
+
 }
